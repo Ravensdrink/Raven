@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Animate.css v3.5.2 -->
+    <link rel="stylesheet" type="text/css" href="animate.css" />
+    <title>渡鴉/Raven</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 1440px;
+            width: 90vw;
+            margin: 0px auto;
+            background: rgba(0, 0, 0, 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        a:link,
+        a:visited {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: 1s;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -o-transition: 1s;
+        }
+
+        a:hover,
+        a:active {
+            color: red;
+            font-size: 20px;
+        }
+
+        .nav-button {
+            margin: 0 0 0 3vw;
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-button i {
+            margin-left: 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            height: 78vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-image: url(img/BG.jpg);
+            background-size: cover;
+            background-blend-mode: multiply;
+            background-position: center center;
+            margin-top: 10vh;
+            padding: 15vh 0;
+            border-radius: 20px;
+            position: relative;
+
+        }
+
+        .logo img {
+            width: 198px;
+            margin: 13px 0 0 0;
+        }
+
+        .word {
+            min-width: 600px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            letter-spacing: 6px;
+        }
+
+        .word p {
+            size: 36px;
+        }
+
+        @media screen and (max-width: 500px) {
+            .content {
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+                height: 94vmax;
+                margin-top: 3vh;
+                padding: 0 0;
+            }
+
+            .logo img {
+                width: 130px;
+                margin: 6vh 0 0 0;
+            }
+
+            .nav-button {
+                margin: 0 0 15vh 0;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            /* 一開始讓東西消失 */
+            -webkit-animation: fadeIn ease-in 1;
+            /* 呼叫命名為 fadeIn 的 keyframe, 使用 ease-in 動畫效果並且只重複執行一次 */
+            -moz-animation: fadeIn ease-in 1;
+            animation: fadeIn ease-in 1;
+
+            -webkit-animation-fill-mode: forwards;
+            /* 確保在動畫完成後，我們會保持在最後的 keyframe 值 (opacity: 1)*/
+            -moz-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+
+        .fade-in.one {
+            -webkit-animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s;
+            animation-delay: 0.7s;
+        }
+
+        .fade-in.two {
+            -webkit-animation-delay: 1.2s;
+            -moz-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+        }
+
+        .fade-in.three {
+            -webkit-animation-delay: 1.7s;
+            -moz-animation-delay: 1.7s;
+            animation-delay: 1.7s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="content fade-in one">
+        <div class="logo fade-in two"><img src="img/logo.png" alt=""></div>
+        <nav class="fade-in three">
+            <div class="nav-button">
+                <pre>
+渡鴉人文飲食
+
+<a href="https://tinyurl.com/yc4jt75c"><i class="fab fa-facebook-square"></i> FACEBOOK</a>
+
+<a href="https://lin.ee/hXz2SKa"><i class="fab fa-line"></i> LINE</a>
+
+<a href="https://www.instagram.com/ravensdrink/"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+
+周一 公休
+周二-五 17:00 -21:00
+周六-日 12:00 -18:00
+
+南投市忠孝路17號 側門 (忠孝七街)</pre>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>
