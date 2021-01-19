@@ -12,37 +12,33 @@
     <title>渡鴉/Raven</title>
     <style>
         @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
-
+        @import url(https://fonts.googleapis.com/css2?family=Varela+Round&display=swap);
         * {
             box-sizing: border-box;
         }
 
         body {
-            max-width: 1440px;
-            width: 90vw;
-            margin: 20px;
-            padding: 0;
             background: rgba(0, 0, 0, 0.5) url(img/BG.jpg) center center fixed no-repeat;
             -moz-background-size: cover;
             background-size: cover;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-family: 'cwTeXYen', 'Varela Round', sans-serif;
         }
 
         pre {
-            font-family: 'cwTeXYen', sans-serif;
+            font-family: 'cwTeXYen', 'Varela Round', sans-serif;
+            font-size: 1.04em;
             letter-spacing: 2px;
             line-height: 22px;
         }
 
         h1 {
+            margin-block-end: 0em;
+            margin-block-start: 1.2em;
             font-size: 2em;
-            margin: -18px 0px;
-            letter-spacing: 4px;
-        }
-
-        h3 {
-            line-height: 40px;
-            margin-block-start: -35px;
-            margin-block-end: -10px;
+            letter-spacing: 1px;
         }
 
 
@@ -60,67 +56,59 @@
         a:hover,
         a:active {
             color: red;
-            font-size: 20px;
-        }
-
-        .nav-button {
-            margin: 0 0 0 3vw;
-            font-size: 16px;
-            color: rgb(255, 255, 255);
-        }
-
-        .nav-button i {
-            margin-left: 0;
         }
 
         .content {
             display: flex;
-            justify-content: center;
-            height: 78vh;
+            flex-direction: column;
+            align-items: flex-end;
             background-size: cover;
             background-blend-mode: multiply;
             background-position: center center;
-            margin-top: 10vh;
-            padding: 15vh 0;
+            padding: 5vh 7vh 0 0;
             position: relative;
         }
 
         .logo img {
-            width: 220px;
-            margin: 13px 0;
+            justify-content: flex-start;
+            width: 70px;
+            margin: 2em 3em;
         }
 
-        .word {
-            min-width: 600px;
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .footer {
             position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            letter-spacing: 6px;
-        }
-
-        .word p {
-            size: 36px;
+            top: 65vh;
         }
 
         @media screen and (max-width: 540px) {
             .content {
-                justify-content: space-between;
+                position: absolute;
+                margin: 20vh 0 0 9vw;
+                align-items: unset;
+            }
+
+            .nav {
+                display: flex;
                 flex-direction: column;
-                align-items: center;
-                height: 94vmax;
-                margin-top: 3vh;
-                padding: 0 0;
+                line-height: 2em;
             }
 
             .logo img {
-                width: 40vw;
-                margin: 3vh 0;
+                justify-content: space-between;
+                width: 70px;
+                margin: 2em 3em;
             }
 
-            .nav-button {
-                margin: 0 0 15vh 0;
+            .footer {
+                top: 38vh;
+            }
+            pre{
+                font-size: 0.95em;
             }
         }
 
@@ -194,26 +182,31 @@
 </head>
 
 <body>
-    <div class="content fade-in one">
-        <div class="logo fade-in two"><img src="img/logo.png" alt=""></div>
-        <nav class="fade-in three">
-            <div class="nav-button">
-                <pre>
-<h1>渡鴉人文飲食</h1>
-牧羊人派、調飲、聚會空間
-<h3>
-<a href="https://tinyurl.com/yc4jt75c" ><i class="fab fa-facebook-square" style="color: #7dacfd;"> FACEBOOK</i></a>
-<a href="https://lin.ee/hXz2SKa" ><i class="fab fa-line" style="color: #05d805;"> LINE</i></a>
-<a href="https://www.instagram.com/ravensdrink/"><i class="fab fa-instagram"  style="color: #fc7aa5;"> INSTAGRAM</i></a>
-</h3>
+    <div class="logo fade-in one"><img src="img/logo.png" alt="">
+    </div>
+    <div class="content">
+        <div>
+            <nav class="nav fade-in two">
+                <a href="https://tinyurl.com/yc4jt75c"><i class="fab fa-facebook-square" style="color: #7dacfd;">
+                    </i>  FACEBOOK　</a>
+                <a href="https://lin.ee/hXz2SKa"><i class="fab fa-line" style="color: #05d805;"></i>  LINE　</a>
+                <a href="https://www.instagram.com/ravensdrink/"><i class="fab fa-instagram" style="color: #fc7aa5;">
+                    </i>  INSTAGRAM</a>
+            </nav>
+        </div>
+        <div class="fade-in two">
+            <h1>渡鴉人文飲食</h1>
+            牧羊人派、調飲、聚會空間
+        </div>
+        <div class="footer fade-in three">
+            <pre>
 公休　周一
 常態　二-五 17:00 ~21:00
 假日　六-日 參照FB公告及營業時間
 　　　*國定假日連假等,同假日公告
 
 <a href="https://tinyurl.com/ybfrukhw">南投市忠孝路17號 側門 (忠孝七街)</a></pre>
-            </div>
-        </nav>
+        </div>
     </div>
 </body>
 
