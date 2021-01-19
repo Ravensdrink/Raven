@@ -13,6 +13,7 @@
     <style>
         @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
         @import url(https://fonts.googleapis.com/css2?family=Varela+Round&display=swap);
+
         * {
             box-sizing: border-box;
         }
@@ -37,7 +38,7 @@
         h1 {
             margin-block-end: 0em;
             margin-block-start: 1.2em;
-            font-size: 2em;
+            font-size: xx-large;
             letter-spacing: 1px;
         }
 
@@ -88,8 +89,12 @@
         @media screen and (max-width: 540px) {
             .content {
                 position: absolute;
-                margin: 20vh 0 0 9vw;
+                margin: 20vh 0 0 0;
                 align-items: unset;
+            }
+
+            .content div {
+                margin: 0em 3em;
             }
 
             .nav {
@@ -99,18 +104,36 @@
             }
 
             .logo img {
-                justify-content: space-between;
-                width: 70px;
-                margin: 2em 3em;
+                width: 65px;
+                margin: 2.5em 2.9em;
             }
 
             .footer {
                 top: 38vh;
             }
-            pre{
+
+            pre {
                 font-size: 0.95em;
             }
         }
+        @media screen and (max-width: 320px) {
+            .content {
+                margin: 20vh 0 0 -4vh;
+            }
+            .logo img {
+                margin: 1.5em 1.8em;
+            }
+        }
+        @media screen and (max-width: 280px) {
+            .content {
+                margin: 20vh 0 0 -6.5vh;
+                padding: 0 0;
+            }
+            .logo img {
+                margin: 1.5em 0.5em;
+            }
+        }
+
 
         @-webkit-keyframes fadeIn {
             from {
@@ -188,10 +211,10 @@
         <div>
             <nav class="nav fade-in two">
                 <a href="https://tinyurl.com/yc4jt75c"><i class="fab fa-facebook-square" style="color: #7dacfd;">
-                    </i>  FACEBOOK　</a>
-                <a href="https://lin.ee/hXz2SKa"><i class="fab fa-line" style="color: #05d805;"></i>  LINE　</a>
+                    </i> FACEBOOK　</a>
+                <a href="https://lin.ee/hXz2SKa"><i class="fab fa-line" style="color: #05d805;"></i> LINE　</a>
                 <a href="https://www.instagram.com/ravensdrink/"><i class="fab fa-instagram" style="color: #fc7aa5;">
-                    </i>  INSTAGRAM</a>
+                    </i> INSTAGRAM</a>
             </nav>
         </div>
         <div class="fade-in two">
