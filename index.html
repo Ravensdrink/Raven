@@ -5,44 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- Animate.css v3.5.2 -->
     <link rel="stylesheet" type="text/css" href="animate.css" />
     <title>渡鴉/Raven</title>
     <style>
         @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
         @import url(https://fonts.googleapis.com/css2?family=Varela+Round&display=swap);
-
         * {
-            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
-
+        
         body {
             background: rgba(0, 0, 0, 0.5) url(img/BG.jpg) center center fixed no-repeat;
             -moz-background-size: cover;
             background-size: cover;
             display: flex;
-            justify-content: space-between;
             color: white;
             font-family: 'cwTeXYen', 'Varela Round', sans-serif;
+            justify-content: space-between;
         }
-
+        
         pre {
             font-family: 'cwTeXYen', 'Varela Round', sans-serif;
             font-size: 1.04em;
             letter-spacing: 2px;
             line-height: 22px;
         }
-
+        
         h1 {
-            margin-block-end: 0em;
-            margin-block-start: 1.2em;
             font-size: xx-large;
             letter-spacing: 1px;
         }
-
-
+        
+        h2 {
+            margin: 5px;
+        }
+        
         a:link,
         a:visited {
             color: white;
@@ -53,12 +54,12 @@
             -moz-transition: 1s;
             -o-transition: 1s;
         }
-
+        
         a:hover,
         a:active {
             color: red;
         }
-
+        
         .content {
             display: flex;
             flex-direction: column;
@@ -69,102 +70,170 @@
             padding: 5vh 7vh 0 0;
             position: relative;
         }
-
+        
+        .title {
+            margin: 2em 0;
+            width: 11.5em;
+        }
+        
+        .logo {
+            margin: 2em 3em;
+        }
+        
         .logo img {
             justify-content: flex-start;
             width: 70px;
-            margin: 2em 3em;
         }
-
+        
+        .calender {
+            width: 300px;
+            margin: 0 3em;
+            position: absolute;
+            bottom: 5%;
+        }
+        
+        .calender li {
+            width: 12.2857142857%;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 1%;
+            border-radius: 5px;
+        }
+        
+        .calender ul {
+            width: 80%;
+            padding: 4px;
+            display: flex;
+            flex-flow: row wrap;
+            border-radius: 5px;
+        }
+        
+        .m-list {
+            background-color: black;
+        }
+        
+        .day-list {
+            height: 200px;
+        }
+        
+        .day-list li {
+            font-size: 8px;
+            height: 32px;
+        }
+        
+        .day-list li p {
+            font-size: 14px;
+        }
+        
+        .day-list li:nth-of-type(7n+1) {
+            background-color: rgba(56, 252, 72, 0.432);
+        }
+        
+        .day-list li:nth-of-type(7n+7) {
+            background-color: rgba(56, 252, 72, 0.432);
+        }
+        
+        .day-list li.active {
+            background-color: rgba(255, 251, 22, 0.432);
+        }
+        
+        .day-list li:nth-of-type(7n+2) {
+            background-color: rgba(248, 74, 74, 0.233);
+            color: rgba(219, 219, 219, 0.644);
+        }
+        
         .nav {
             display: flex;
             justify-content: flex-end;
         }
-
+        
         .footer {
             position: absolute;
             top: 65vh;
         }
-
-        @media screen and (max-width: 540px) {
+        
+        @media screen and (max-width: 660px) {
             .content {
                 position: absolute;
-                margin: 20vh 0 0 0;
+                margin: 20vh 3em;
                 align-items: unset;
             }
-
-            .content div {
-                margin: 0em 3em;
-            }
-
             .nav {
                 display: flex;
                 flex-direction: column;
                 line-height: 2em;
             }
-
-            .logo img {
-                width: 65px;
-                margin: 2.5em 2.9em;
+            .title {
+                margin: 1em 0;
             }
-
+            .calender {
+                height: 300px;
+                bottom: -20%;
+            }
             .footer {
-                top: 38vh;
+                top: 32vh;
             }
-
             pre {
                 font-size: 0.95em;
             }
         }
+        
         @media screen and (max-width: 320px) {
             .content {
-                margin: 20vh 0 0 -4vh;
+                margin: 20vh 1.5em;
             }
-            .logo img {
-                margin: 1.5em 1.8em;
+            .calender {
+                margin: 0 1.5em;
+            }
+            .logo {
+                margin: 2em 1.5em;
             }
         }
+        
         @media screen and (max-width: 280px) {
             .content {
-                margin: 20vh 0 0 -6.5vh;
-                padding: 0 0;
+                margin: 20vh 1em;
             }
-            .logo img {
-                margin: 1.5em 0.5em;
+            .calender {
+                margin: 0 1em;
+            }
+            .logo {
+                margin: 2em 1em;
             }
         }
-
-
+        
+        @media screen and (height: 640px) {
+            .calender {}
+            .footer {}
+        }
+        
         @-webkit-keyframes fadeIn {
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
         }
-
+        
         @-moz-keyframes fadeIn {
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
         }
-
+        
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
         }
-
+        
         .fade-in {
             opacity: 0;
             /* 一開始讓東西消失 */
@@ -172,29 +241,27 @@
             /* 呼叫命名為 fadeIn 的 keyframe, 使用 ease-in 動畫效果並且只重複執行一次 */
             -moz-animation: fadeIn ease-in 1;
             animation: fadeIn ease-in 1;
-
             -webkit-animation-fill-mode: forwards;
             /* 確保在動畫完成後，我們會保持在最後的 keyframe 值 (opacity: 1)*/
             -moz-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
-
             -webkit-animation-duration: 1s;
             -moz-animation-duration: 1s;
             animation-duration: 1s;
         }
-
+        
         .fade-in.one {
             -webkit-animation-delay: 0.7s;
             -moz-animation-delay: 0.7s;
             animation-delay: 0.7s;
         }
-
+        
         .fade-in.two {
             -webkit-animation-delay: 1.2s;
             -moz-animation-delay: 1.2s;
             animation-delay: 1.2s;
         }
-
+        
         .fade-in.three {
             -webkit-animation-delay: 1.7s;
             -moz-animation-delay: 1.7s;
@@ -207,6 +274,64 @@
 <body>
     <div class="logo fade-in one"><img src="img/logo.png" alt="">
     </div>
+    <div class="calender fade-in three">
+        <h2>壹月</h2>
+        <ul class="m-list">
+            <li>日</li>
+            <li>一</li>
+            <li>二</li>
+            <li>三</li>
+            <li>四</li>
+            <li>五</li>
+            <li>六</li>
+        </ul>
+        <ul class="day-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4
+                <p>公休</p>
+            </li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11
+                <p>公休</p>
+            </li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18
+                <p>公休</p>
+            </li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25
+                <p>公休</p>
+            </li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+        </ul>
+    </div>
     <div class="content">
         <div>
             <nav class="nav fade-in two">
@@ -217,7 +342,7 @@
                     </i> INSTAGRAM</a>
             </nav>
         </div>
-        <div class="fade-in two">
+        <div class="title fade-in two">
             <h1>渡鴉人文飲食</h1>
             牧羊人派、調飲、聚會空間
         </div>
@@ -232,5 +357,7 @@
         </div>
     </div>
 </body>
+
+</html>
 
 </html>
