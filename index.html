@@ -25,20 +25,21 @@
             -moz-background-size: cover;
             background-size: cover;
             display: flex;
+            width: 100vw;
+            height: 100vh;
             color: white;
             font-family: 'cwTeXYen', 'Varela Round', sans-serif;
-            justify-content: space-between;
         }
 
-        pre {
+        p {
             font-family: 'cwTeXYen', 'Varela Round', sans-serif;
-            font-size: 1.04em;
+            font-size: 12px;
             letter-spacing: 2px;
-            line-height: 22px;
+            line-height: 20px;
         }
 
         h1 {
-            font-size: xx-large;
+            font-size: 28px;
             letter-spacing: 1px;
         }
 
@@ -49,6 +50,7 @@
         a:link,
         a:visited {
             color: white;
+            font-size: 12px;
             text-decoration: none;
             display: inline-block;
             transition: 1s;
@@ -62,36 +64,51 @@
             color: red;
         }
 
+
+
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            background-size: cover;
-            background-blend-mode: multiply;
-            background-position: center center;
-            padding: 5vh 7vh 0 0;
             position: relative;
         }
 
         .title {
-            margin: 2em 0;
-            width: 11.5em;
+            position: fixed;
+            top: 10%;
+            right: 5%;
+        }
+
+        .nav {
+            width: 90%;
+            display: flex;
+            position: fixed;
+            padding: 2.5% 5%;
+            justify-content: space-between;
+        }
+
+        .nav nav {
+            display: flex;
+        }
+
+        .footer {
+            position: fixed;
+            top: 25%;
+            right: 5%;
+            padding: 12px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
         }
 
         .logo {
-            margin: 2em 3em;
-        }
-
-        .logo img {
-            justify-content: flex-start;
-            width: 70px;
+            width: 10%;
+            padding: 0.7%;
         }
 
         .calender {
-            width: 300px;
-            margin: 0 3em;
+            width: 240px;
+            height: 300px;
+            margin: auto;
             position: absolute;
-            bottom: 5%;
+            bottom: 7%;
+            right: 5%;
         }
 
         .calender li {
@@ -103,11 +120,17 @@
         }
 
         .calender ul {
-            width: 80%;
             padding: 4px;
             display: flex;
             flex-flow: row wrap;
             border-radius: 5px;
+        }
+
+        .m-title {
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
         }
 
         .m-list {
@@ -121,11 +144,11 @@
         .day-list li {
             padding: 4px 0;
             font-size: 8px;
-            height: 32px;
+            height: 40px;
         }
 
         .day-list li p {
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .day-list li:nth-of-type(7n+1) {
@@ -146,79 +169,74 @@
             color: rgba(219, 219, 219, 0.644);
         }
 
-        .nav {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .footer {
-            position: absolute;
-            top: 65vh;
-        }
-
         @media screen and (max-width: 660px) {
+            .rwd {
+                display: grid;
+                padding: 15vh 0 5% 0;
+                width: 300px;
+                margin: auto;
+            }
+
             .content {
-                position: absolute;
-                margin: 20vh 3em;
+                flex-direction: column;
+                justify-content: center;
                 align-items: unset;
+
+            }
+
+            .logo {
+                width: 50px;
+                height: 67px;
+                padding: 0.7%;
             }
 
             .nav {
-                display: flex;
+                width: 70%;
+                padding: 5% 15%;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                flex-direction: row;
+                z-index: 99;
+            }
+
+            .nav nav {
                 flex-direction: column;
-                line-height: 2em;
+            }
+
+            .fab {
+                line-height: 2;
             }
 
             .title {
-                margin: 1em 0;
+                margin: auto;
+                padding: 10% 0 5% 0;
+                width: 80%;
+                position: unset;
             }
 
             .calender {
                 height: 300px;
-                bottom: -20%;
+                margin: auto;
+                position: unset;
+                bottom: 0%;
+            }
+
+            .calender ul {
+                margin: auto;
             }
 
             .footer {
-                top: 32vh;
+                top: 0%;
+                padding: 5%;
+                position: unset;
+                margin: auto;
+                width: 80%;
             }
 
             pre {
                 font-size: 0.95em;
             }
-        }
-
-        @media screen and (max-width: 320px) {
-            .content {
-                margin: 20vh 1.5em;
-            }
-
-            .calender {
-                margin: 0 1.5em;
-            }
-
-            .logo {
-                margin: 2em 1.5em;
-            }
-        }
-
-        @media screen and (max-width: 280px) {
-            .content {
-                margin: 20vh 1em;
-            }
-
-            .calender {
-                margin: 0 1em;
-            }
-
-            .logo {
-                margin: 2em 1em;
-            }
-        }
-
-        @media screen and (height: 640px) {
-            .calender {}
-
-            .footer {}
         }
 
         @-webkit-keyframes fadeIn {
@@ -289,84 +307,89 @@
 </head>
 
 <body>
-    <div class="logo fade-in one"><img src="img/logo.png" alt="">
-    </div>
-    <div class="calender fade-in three">
-        <h2>叁月</h2>
-        <p>紅色透明為店面休息日喔!</p>
-        <ul class="m-list">
-            <li>日</li>
-            <li>一</li>
-            <li>二</li>
-            <li>三</li>
-            <li>四</li>
-            <li>五</li>
-            <li>六</li>
-        </ul>
-        <ul class="day-list">
-            <li></li>
-            <li>1 <p>公休</p>
-            </li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8 <p>公休</p>
-            </li>
-            <li>9</li>
-            <li>10</li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
-            <li>14</li>
-            <li>15 <p>公休</p>
-            </li>
-            <li>16</li>
-            <li>17</li>
-            <li>18</li>
-            <li>19</li>
-            <li>20</li>
-            <li>21</li>
-            <li>22 <p>公休</p>
-            </li>
-            <li>23</li>
-            <li>24</li>
-            <li>25</li>
-            <li>26</li>
-            <li>27</li>
-            <li>28</li>
-            <li>29 <p>公休</p>
-            </li>
-            <li>30</li>
-            <li>31</li>
-        </ul>
-    </div>
-    <div class="content">
-        <div>
-            <nav class="nav fade-in two">
-                <a href="https://tinyurl.com/yc4jt75c"><i class="fab fa-facebook-square" style="color: #7dacfd;">
-                    </i> FACEBOOK　</a>
-                <a href="https://lin.ee/hXz2SKa"><i class="fab fa-line" style="color: #05d805;"></i> LINE　</a>
-                <a href="https://www.instagram.com/ravensdrink/"><i class="fab fa-instagram" style="color: #fc7aa5;">
-                    </i> INSTAGRAM</a>
-            </nav>
+    <div class="rwd">
+        <div class="content">
+            <div class="nav">
+                <img class="logo fade-in one" src="img/logo.png" alt="">
+                <nav class="fade-in two">
+                    <a href="https://tinyurl.com/yc4jt75c"><i class="fab fa-facebook-square" style="color: #7dacfd;">
+                        </i> FACEBOOK　</a>
+                    <a href="https://lin.ee/hXz2SKa"><i class="fab fa-line" style="color: #05d805;"></i> LINE　</a>
+                    <a href="https://www.instagram.com/ravensdrink/"><i class="fab fa-instagram"
+                            style="color: #fc7aa5;">
+                        </i> INSTAGRAM</a>
+                </nav>
+            </div>
+            <div class="title fade-in two">
+                <h1>渡鴉人文飲食</h1>
+                調飲、聚會空間
+            </div>
+            <div class="footer fade-in three">
+                <p>公休　周一</p>
+                <p>常態　二-五 17:00 ~21:00</p>
+                <p>假日　六-日 參照FB公告及營業時間</p>
+                <p style="text-align: center;">*國定假日連假等,同假日公告</p>
+                <a href="https://tinyurl.com/ybfrukhw"
+                    style="display: flex;justify-content: center;font-size: 14px;margin-top: 10px;">南投市忠孝路17號 側門
+                    (忠孝七街)</a>
+            </div>
         </div>
-        <div class="title fade-in two">
-            <h1>渡鴉人文飲食</h1>
-            調飲、聚會空間
+        <div class="calender fade-in three">
+            <div class="m-title">
+                <h2>叁月</h2>
+                <p>紅色透明為店面休息日喔!</p>
+            </div>
+            <ul class="m-list">
+                <li>日</li>
+                <li>一</li>
+                <li>二</li>
+                <li>三</li>
+                <li>四</li>
+                <li>五</li>
+                <li>六</li>
+            </ul>
+            <ul class="day-list">
+                <li></li>
+                <li>1 <p>公休</p>
+                </li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8 <p>公休</p>
+                </li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15 <p>公休</p>
+                </li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22 <p>公休</p>
+                </li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29 <p>公休</p>
+                </li>
+                <li>30</li>
+                <li>31</li>
+            </ul>
         </div>
-        <div class="footer fade-in three">
-            <pre>
-公休　周一
-常態　二-五 17:00 ~21:00
-假日　六-日 參照FB公告及營業時間
-　　　*國定假日連假等,同假日公告
+    </div>
 
-<a href="https://tinyurl.com/ybfrukhw">南投市忠孝路17號 側門 (忠孝七街)</a></pre>
-        </div>
-    </div>
 </body>
 
 </html>
